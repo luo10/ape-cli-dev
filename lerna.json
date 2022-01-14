@@ -2,6 +2,10 @@
   "publishConfig": {
     "access": "public"
   },
-  "packages": ["core/*", "utils/*", "command/*"],
-  "version": "0.0.2-alpha.0"
+  "packages": [
+    "core/*",
+    "utils/*",
+    "command/*"
+  ],
+  "version": "0.0.3-alpha.0"
 }
