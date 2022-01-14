@@ -1,11 +1,4 @@
 {
-  "publishConfig": {
-    "access": "public"
-  },
-  "packages": [
-    "core/*",
-    "utils/*",
-    "command/*"
-  ],
+  "packages": ["core/*", "utils/*", "command/*"],
   "version": "0.0.3-alpha.0"
 }
