@@ -1,6 +1,6 @@
 {
   "name": "@ape-cli-dev/core",
-  "version": "0.0.5-alpha.0",
+  "version": "0.0.6-alpha.0",
   "description": "主入口",
   "author": "罗十十十 <330240995@qq.com>",
   "homepage": "",
@@ -20,10 +20,10 @@
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "dependencies": {
-    "@ape-cli-dev/command-ev4": "^0.0.5-alpha.0",
-    "@ape-cli-dev/command-init": "^0.0.5-alpha.0",
-    "@ape-cli-dev/core-config": "^0.0.5-alpha.0",
-    "@ape-cli-dev/utils": "^0.0.5-alpha.0",
+    "@ape-cli-dev/command-ev4": "^0.0.6-alpha.0",
+    "@ape-cli-dev/command-init": "^0.0.6-alpha.0",
+    "@ape-cli-dev/core-config": "^0.0.6-alpha.0",
+    "@ape-cli-dev/utils": "^0.0.6-alpha.0",
     "commander": "^8.3.0",
     "dotenv": "^10.0.0",
     "fs-extra": "^10.0.0",
