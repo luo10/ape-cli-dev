@@ -17,9 +17,10 @@
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "dependencies": {
-    "@ape-cli-dev/core-config": "file:../../core/config",
-    "@ape-cli-dev/utils": "file:../../utils/utils",
+    "@ape-cli-dev/core-config": "^0.0.1-alpha.0",
+    "@ape-cli-dev/utils": "^0.0.1-alpha.0",
     "commander": "^8.3.0",
     "inquirer": "^8.2.0"
-  }
+  },
+  "gitHead": "28d08f628188af6d5207357805a9c10037eaffe5"
 }
