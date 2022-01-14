@@ -19,5 +19,8 @@
   "dependencies": {
     "fs-extra": "^10.0.0"
   },
-  "gitHead": "89a0dbfeb3a0c53f96da713d8073d048d8fb1e71"
+  "gitHead": "e3f2792e2ce9e220a03934efc64a4d6b4587b43a",
+  "publishConfig": {
+    "access": "public"
+  }
 }
