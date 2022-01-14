@@ -1,0 +1,36 @@
+{
+  "name": "@ape-cli-dev/core",
+  "version": "0.0.1",
+  "description": "主入口",
+  "author": "罗十十十 <330240995@qq.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "lib/core.js",
+  "bin": {
+    "ape-cli-dev": "bin/index.js"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "dependencies": {
+    "@ape-cli-dev/utils": "file:../../utils/utils",
+    "@ape-cli-dev/core-config": "file:../config",
+    "@ape-cli-dev/command-init": "file:../../command/init",
+    "@ape-cli-dev/command-ev4": "file:../../command/ev4",
+    "commander": "^8.3.0",
+    "dotenv": "^10.0.0",
+    "fs-extra": "^10.0.0",
+    "import-local": "^3.0.3",
+    "inquirer": "^8.2.0",
+    "npmlog": "^6.0.0",
+    "path-exists": "^5.0.0",
+    "user-home": "^3.0.0"
+  }
+}

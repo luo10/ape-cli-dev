@@ -1,0 +1,27 @@
+{
+  "name": "@ape-cli-dev/command-ev4",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "罗十十十 <330240995@qq.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "lib/ev4.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "dependencies": {
+    "@ape-cli-dev/core-config": "file:../../core/config",
+    "@ape-cli-dev/utils": "file:../../utils/utils",
+    "commander": "^8.3.0",
+    "fs-extra": "^10.0.0",
+    "inquirer": "^8.2.0",
+    "npmlog": "^6.0.0"
+  }
+}
