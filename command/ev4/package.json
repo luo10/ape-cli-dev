@@ -22,7 +22,8 @@
     "commander": "^8.3.0",
     "fs-extra": "^10.0.0",
     "inquirer": "^8.2.0",
-    "npmlog": "^6.0.0"
+    "npmlog": "^6.0.0",
+    "simple-git": "^2.48.0"
   },
   "gitHead": "e3f2792e2ce9e220a03934efc64a4d6b4587b43a",
   "publishConfig": {
