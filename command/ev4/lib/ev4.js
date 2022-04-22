@@ -39,6 +39,7 @@ async function checkDir() {
 }
 
 async function registerInquirer() {
+  console.log(1111);
   await inquirer
     .prompt([
       {
@@ -51,6 +52,7 @@ async function registerInquirer() {
           { name: "新加功能", value: "new-feat" },
           { name: "正在开发的功能", value: "feat-list" },
           { name: "提交测试", value: "update-develop" },
+          { name: "提交模拟", value: "update-pre-release" },
           { name: "提交正式", value: "update-production" },
         ],
       },
@@ -68,6 +70,11 @@ async function registerInquirer() {
       // 提交测试
       if (answers.type == "update-develop") {
         await updateDevelop();
+      }
+
+      // 提交模拟
+      if (answers.type == "update-pre-release") {
+        await updatePreRelease();
       }
 
       // 提交正式
@@ -131,6 +138,35 @@ async function updateDevelop() {
       await buildGit.add(["."]); // 添加代码
       await buildGit.commit([updateAnswers.gittext]); // 打标记
       await buildGit.push(["origin", "develop"]); // 推送代码
+    });
+}
+
+// 更新模拟
+async function updatePreRelease() {
+  await isInBranch("pre-release");
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "gittext",
+        message: "请输入更新内容",
+      },
+    ])
+    .then(async (updateAnswers) => {
+      // 打包
+      await spawnAsync("npm", ["run", "build:pre"]);
+      // 更新上线项目git
+      const buildPath = path.join(process.cwd(), "..", "edu_v4_vue_build");
+      const buildGit = simpleGit({ baseDir: buildPath });
+      await buildGit.checkout("pre-release"); // 切换测试分支
+      await buildGit.pull(["origin", "pre-release"]); // 更新
+      // 清空上线git
+      emptyDirNoGit(buildPath);
+      // 粘贴代码
+      fse.copySync(path.join(process.cwd(), "dist"), buildPath);
+      await buildGit.add(["."]); // 添加代码
+      await buildGit.commit([updateAnswers.gittext]); // 打标记
+      await buildGit.push(["origin", "pre-release"]); // 推送代码
     });
 }
 
