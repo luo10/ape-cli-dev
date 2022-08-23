@@ -25,7 +25,7 @@
     "npmlog": "^6.0.0",
     "simple-git": "^2.48.0"
   },
-  "gitHead": "e3f2792e2ce9e220a03934efc64a4d6b4587b43a",
+  "gitHead": "436a773646e593d64e21a78192667f7c6017c03b",
   "publishConfig": {
     "access": "public"
   }
