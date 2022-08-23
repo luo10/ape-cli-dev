@@ -18,7 +18,7 @@ async function ev4() {
 }
 
 async function prepare() {
-  await checkDir();
+  // await checkDir();
 }
 
 /**
@@ -39,7 +39,6 @@ async function checkDir() {
 }
 
 async function registerInquirer() {
-  console.log(1111);
   await inquirer
     .prompt([
       {
@@ -60,11 +59,11 @@ async function registerInquirer() {
     .then(async (answers) => {
       // 本地启动:测试数据
       if (answers.type == "local-dev") {
-        spawnAsync("npm", ["run", "serve:dev"]);
+        spawnAsync("pnpm", ["run", "serve:dev"]);
       }
       // 本地启动:正式数据
       if (answers.type == "local-pro") {
-        spawnAsync("npm", ["run", "serve:pro"]);
+        spawnAsync("pnpm", ["run", "serve:pro"]);
       }
 
       // 提交测试
@@ -125,7 +124,7 @@ async function updateDevelop() {
     ])
     .then(async (updateAnswers) => {
       // 打包
-      await spawnAsync("npm", ["run", "build:dev"]);
+      await spawnAsync("pnpm", ["run", "build:dev"]);
       // 更新上线项目git
       const buildPath = path.join(process.cwd(), "..", "edu_v4_vue_build");
       const buildGit = simpleGit({ baseDir: buildPath });
@@ -154,7 +153,7 @@ async function updatePreRelease() {
     ])
     .then(async (updateAnswers) => {
       // 打包
-      await spawnAsync("npm", ["run", "build:pre"]);
+      await spawnAsync("pnpm", ["run", "build:pre"]);
       // 更新上线项目git
       const buildPath = path.join(process.cwd(), "..", "edu_v4_vue_build");
       const buildGit = simpleGit({ baseDir: buildPath });
@@ -198,7 +197,7 @@ async function updateProduction() {
       await git.push(["origin", "master"]);
 
       // 打包
-      await spawnAsync("npm", ["run", "build:pro"]);
+      await spawnAsync("pnpm", ["run", "build:pro"]);
 
       // 更新上线项目git
       const buildPath = path.join(process.cwd(), "..", "edu_v4_vue_build");
@@ -247,7 +246,6 @@ async function newFeat() {
  */
 async function featList() {
   const { all } = await git.branchLocal();
-  console.log(all, 99);
 }
 
 module.exports = ev4;

@@ -28,8 +28,8 @@ function prepare() {
 
 function checkNodeVersion() {
   const n = process.version.split(".")[0].slice(1); // 获取版本号
-  if (n != 14) {
-    throw new Error("请使用14.17.xx版本的node");
+  if (n != 16) {
+    throw new Error("请使用16.14.xx版本的node");
   }
 }
 
